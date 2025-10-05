@@ -1,0 +1,70 @@
+/* src/pages/Contact.css */
+.contact-page {
+  /* === მთავარი ცვლილება: გავზარდეთ დაშორება ზემოდან === */
+  padding-top: 9rem; /* იყო 100px, გავხადეთ ~144px */
+  padding-bottom: 4rem;
+  min-height: 80vh;
+}
+/* ================================================= */
+
+.contact-page h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  margin-top: 4rem;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  text-align: left; /* ტექსტს ვასწორებთ მარცხნივ */
+}
+
+.contact-info h2, .contact-form h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea {
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.contact-form button {
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: var(--dark-color);
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+}

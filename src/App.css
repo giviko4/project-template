@@ -1,0 +1,27 @@
+/* src/App.css */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.header-spacer {
+  height: 90px;
+}
+main {
+  flex-grow: 1;
+  position: relative;
+}
+
+/* ვამატებთ ადგილს ქვედა ნავიგაციისთვის მხოლოდ მობილურზე */
+@media (max-width: 992px) {
+  main {
+    padding-bottom: 65px; /* პანელის სიმაღლე */
+  }
+}
+
+.page-container {
+  width: 100%;
+}
+/* ... (Page Transition Styles) ... */
+
+

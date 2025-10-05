@@ -1,0 +1,110 @@
+/* src/pages/Menu.css */
+.menu-page {
+  padding-top: 9rem;
+  padding-bottom: 4rem;
+}
+
+.menu-title,
+.search-results-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.menu-title {
+  font-size: 3rem;
+}
+
+.menu-intro {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 1rem auto;
+  font-size: 1.1rem;
+  color: var(--dark-color);
+  opacity: 0.9;
+}
+
+.search-results-title {
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: var(--dark-color);
+  margin-bottom: 2rem;
+}
+
+.search-results-title span {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.menu-section {
+  margin-bottom: 4rem;
+}
+
+.menu-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* === მთავარი შესწორება === */
+.menu-grid.center-single-item {
+  /* როდესაც ერთი ელემენტია, ვაიძულებთ, რომ იყოს ერთსვეტიანი ბადე */
+  grid-template-columns: 1fr;
+  justify-items: center; /* ცენტრში სწორება */
+}
+
+.menu-grid.center-single-item .menu-card {
+  width: 100%;
+  max-width: 800px; /* ვუწესებთ მაქსიმალურ სიგანეს */
+  height: 400px; /* ვზრდით სიმაღლეს, რომ უფრო ლამაზი იყოს */
+}
+/* ======================== */
+
+.menu-card {
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.menu-card-overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 70%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 1.2rem; color: var(--light-color); 
+}
+
+.menu-card-overlay h3 {
+  font-family: var(--font-heading); color: var(--light-color); font-size: 1.3rem; margin-bottom: 0.3rem;
+}
+
+.menu-card-overlay .item-description {
+  font-size: 0.85rem; margin-bottom: 0.8rem; line-height: 1.4;
+  opacity: 0.9;
+}
+
+.menu-card-overlay .price {
+  font-weight: bold; font-size: 1.1rem; color: var(--secondary-color);
+}
+
+.no-menu-results {
+  text-align: center; font-size: 1.5rem; color: #888; padding: 3rem 0;
+}
+

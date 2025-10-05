@@ -1,0 +1,50 @@
+/* src/components/GallerySlider.css */
+.gallery-carousel-fade {
+  max-width: 100%;
+  margin: 2rem 0;
+}
+
+.slide-item-fade {
+  padding: 0 10px;
+  transform: scale(0.8);
+  opacity: 0.5;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.slick-center .slide-item-fade {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.image-container-fade {
+  height: 350px;
+  border-radius: 16px;
+  overflow: hidden; 
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.image-container-fade img {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+}
+
+.slick-dots {
+  bottom: -40px;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+  color: var(--primary-color);
+  opacity: 0.4;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .image-container-fade {
+    height: 280px;
+  }
+}

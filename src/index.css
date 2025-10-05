@@ -1,0 +1,20 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  --primary-color: #6F4E37;
+  --secondary-color: #F5F5DC;
+  --dark-color: #3b2f2f;
+  --light-color: #ffffff;
+  --card-bg-color: #FAF9F6;
+  --light-brown: #D2B48C;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-body); background-color: var(--secondary-color); color: var(--dark-color); line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+ul { list-style-type: none; }
+h1, h2, h3 { font-family: var(--font-heading); color: var(--primary-color); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }

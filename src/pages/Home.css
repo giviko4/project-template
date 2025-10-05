@@ -1,0 +1,26 @@
+/* src/pages/Home.css */
+.home-page > .hero-section {
+  margin-top: -90px;
+}
+
+.about-section, 
+.gallery-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  text-align: center;
+}
+
+.about-section + .gallery-section {
+  margin-top: 2rem;
+}
+
+.about-section h2, .gallery-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-section p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
