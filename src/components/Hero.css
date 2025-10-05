@@ -70,3 +70,14 @@
   }
 }
 /* ========================================================= */
+
+
+
+
+/* src/components/Header.css */
+/* ... (ყველა წინა სტილი) ... */
+.action-btn.search-toggle-btn { background: none; border: none; cursor: pointer; font-size: 1.3rem; display: flex; align-items: center; }
+
+@media (max-width: 992px) {
+  .nav-area { display: none; }
+}

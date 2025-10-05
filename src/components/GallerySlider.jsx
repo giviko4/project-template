@@ -19,29 +19,19 @@ const GallerySlider = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     
-    // === მთავარი პარამეტრები ===
-    centerMode: true,   // აუცილებელია გვერდითა სურათების გამოსაჩენად
-    slidesToShow: 1,    // ვაჩვენებთ ერთ მთავარ სურათს
-    centerPadding: '25%', // ადგილი გვერდითა სურათებისთვის
-    // ========================
-
-    responsive: [
-      {
-        breakpoint: 768, // მობილურის ზომაზე
-        settings: {
-          slidesToShow: 1,
-          centerPadding: '15%', // ვამცირებთ დაშორებას
-        }
-      }
-    ]
+    // === მთავარი ცვლილება: ვაჩვენებთ მხოლოდ ერთ სურათს ===
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    // centerMode და centerPadding წაშლილია
+    // ===================================================
   };
 
   return (
-    <div className="gallery-carousel-fade">
+    <div className="gallery-slider-simple">
       <Slider {...settings}>
         {images.map((img, index) => (
-          <div key={index} className="slide-item-fade">
-            <div className="image-container-fade">
+          <div key={index} className="slide-item-simple">
+            <div className="image-container-simple">
               <img src={img} alt={`Gallery item ${index + 1}`} />
             </div>
           </div>

@@ -7,6 +7,7 @@ import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import BottomNav from './components/BottomNav';
+import SearchModal from './components/SearchModal';
 import Home from './pages/Home';
 import Menu from './pages/Menu';
 import Contact from './pages/Contact';
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="app-layout">
       <Header />
+      <SearchModal />
       <div className="header-spacer"></div>
 
       <main>

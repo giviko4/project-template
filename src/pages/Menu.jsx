@@ -34,45 +34,53 @@ const Menu = () => {
         </>
       )}
 
-      {/* ყავის სექცია */}
-      {filteredCoffee.length > 0 && (
-        <section className="menu-section">
-          <h2>Coffee</h2>
-          <div className={`menu-grid ${totalResults === 1 ? 'center-single-item' : ''}`}>
-            {filteredCoffee.map(item => (
-              <div key={item.id} className="menu-card" style={{ backgroundImage: `url(${item.image})` }}>
-                <div className="menu-card-overlay">
-                  <h3>{item.name}</h3>
-                  <p className="item-description">{item.description}</p>
-                  <span className="price">{item.price}</span>
-                </div>
+      {/* === მთავარი ლოგიკური ცვლილება === */}
+      
+      {/* თუ შედეგები არსებობს, ვაჩვენებთ სექციებს */}
+      {totalResults > 0 && (
+        <>
+          {filteredCoffee.length > 0 && (
+            <section className="menu-section">
+              <h2>Coffee</h2>
+              <div className="menu-grid">
+                {filteredCoffee.map(item => (
+                  <div key={item.id} className="menu-card" style={{ backgroundImage: `url(${item.image})` }}>
+                    <div className="menu-card-overlay">
+                      <h3>{item.name}</h3>
+                      <p className="item-description">{item.description}</p>
+                      <span className="price">{item.price}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </section>
+            </section>
+          )}
+
+          {filteredPastries.length > 0 && (
+            <section className="menu-section">
+              <h2>Pastries</h2>
+              <div className="menu-grid">
+                {filteredPastries.map(item => (
+                  <div key={item.id} className="menu-card" style={{ backgroundImage: `url(${item.image})` }}>
+                    <div className="menu-card-overlay">
+                      <h3>{item.name}</h3>
+                      <p className="item-description">{item.description}</p>
+                      <span className="price">{item.price}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+        </>
       )}
 
-      {/* ნამცხვრების სექცია */}
-      {filteredPastries.length > 0 && (
-        <section className="menu-section">
-          <h2>Pastries</h2>
-          <div className={`menu-grid ${totalResults === 1 ? 'center-single-item' : ''}`}>
-            {filteredPastries.map(item => (
-              <div key={item.id} className="menu-card" style={{ backgroundImage: `url(${item.image})` }}>
-                <div className="menu-card-overlay">
-                  <h3>{item.name}</h3>
-                  <p className="item-description">{item.description}</p>
-                  <span className="price">{item.price}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {totalResults === 0 && searchQuery && (
+      {/* თუ ძიება აქტიურია და შედეგები არ არის, ვაჩვენებთ შეტყობინებას */}
+      {searchQuery && totalResults === 0 && (
         <p className="no-menu-results">No items found matching your search.</p>
       )}
+      
+      {/* ================================== */}
     </div>
   );
 };

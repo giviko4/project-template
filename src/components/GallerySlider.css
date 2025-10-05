@@ -1,34 +1,24 @@
 /* src/components/GallerySlider.css */
-.gallery-carousel-fade {
-  max-width: 100%;
-  margin: 2rem 0;
+.gallery-slider-simple {
+  max-width: 900px; /* სლაიდერის მაქსიმალური სიგანე */
+  margin: 2rem auto; /* ავტომატური ცენტრირება */
+  padding: 0 1rem; /* მცირე დაშორება გვერდებიდან მობილურისთვის */
 }
 
-.slide-item-fade {
-  padding: 0 10px;
-  transform: scale(0.8);
-  opacity: 0.5;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.slick-center .slide-item-fade {
-  transform: scale(1);
-  opacity: 1;
-}
-
-.image-container-fade {
-  height: 350px;
+.image-container-simple {
+  height: 500px;
   border-radius: 16px;
-  overflow: hidden; 
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.image-container-fade img {
+.image-container-simple img {
   width: 100%;
-  height: 100%; 
-  object-fit: cover;
+  height: 100%;
+  object-fit: cover; /* ასწორებს squeezed ეფექტს */
 }
 
+/* წერტილების სტილი */
 .slick-dots {
   bottom: -40px;
 }
@@ -43,8 +33,9 @@
   opacity: 1;
 }
 
+/* მობილურის ვერსია */
 @media (max-width: 768px) {
-  .image-container-fade {
-    height: 280px;
+  .image-container-simple {
+    height: 300px; /* ვამცირებთ სიმაღლეს */
   }
 }
