@@ -64,4 +64,4 @@ const SearchModal = () => {
     </div>
   );
 };
-export default SearchModal;
+export default SearchModal;   //
