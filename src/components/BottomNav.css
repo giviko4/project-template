@@ -2,20 +2,20 @@
 .bottom-nav {
   display: none;
   position: fixed;
-  
-  /* === მთავარი ცვლილება აქ არის === */
-  bottom: 1.5rem; /* გავზარდეთ დაშორება ქვედა კიდიდან */
+  bottom: 1.5rem;
   bottom: calc(1.5rem + env(safe-area-inset-bottom));
-  /* =============================== */
-
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 2rem);
-  max-width: 400px;
+  
+  /* === მთავარი ცვლილება აქ არის === */
+  max-width: 350px; /* შევამცირეთ სიგანე (იყო 400px) */
+  /* =============================== */
+
   height: 65px;
   background-color: var(--card-bg-color);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 20px;
+  border-radius: 30px;
   justify-content: space-around;
   align-items: center;
   z-index: 1000;
@@ -27,27 +27,17 @@
 }
 
 .bottom-nav .nav-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  color: var(--primary-color);
-  opacity: 0.7;
-  font-size: 0.7rem;
-  font-weight: 600;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 4px; color: var(--primary-color); opacity: 0.7;
+  font-size: 0.7rem; font-weight: 600;
   transition: opacity 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
-.bottom-nav .nav-link svg {
-  font-size: 1.5rem;
-}
+.bottom-nav .nav-link svg { font-size: 1.5rem; }
 
 .bottom-nav .nav-link.active,
 .bottom-nav .nav-link:hover {
-  opacity: 1;
-  color: var(--dark-color);
-  transform: translateY(-2px);
+  opacity: 1; color: var(--dark-color); transform: translateY(-2px);
 }
 
 @media (max-width: 992px) {

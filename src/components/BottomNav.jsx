@@ -10,7 +10,27 @@ const BottomNav = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const { openSearch } = useSearch();
 
-  // ... (useEffect უცვლელია) ...
+  const controlNavbar = () => {
+    if (typeof window !== 'undefined') {
+      if (window.scrollY <= 10) {
+        setShowNav(true);
+      } else if (window.scrollY > lastScrollY) {
+        setShowNav(false);
+      } else {
+        setShowNav(true);
+      }
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', controlNavbar);
+      return () => {
+        window.removeEventListener('scroll', controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
 
   const handleSearchClick = (e) => {
     e.preventDefault();
@@ -26,4 +46,5 @@ const BottomNav = () => {
     </nav>
   );
 };
+
 export default BottomNav;

@@ -56,20 +56,28 @@
 
 /* === მთავარი შესწორება === */
 .menu-grid.center-single-item {
-  /* როდესაც ერთი ელემენტია, ვაიძულებთ, რომ იყოს ერთსვეტიანი ბადე */
-  grid-template-columns: 1fr;
-  justify-items: center; /* ცენტრში სწორება */
+  /* 
+    ჩვენ აღარ ვცვლით სვეტების რაოდენობას.
+    უბრალოდ ვეუბნებით grid-ს, რომ შიგთავსი გააცენტროს.
+  */
+  justify-content: center;
 }
 
+/* ეს წესი აღარ გვჭირდება, რადგან menu-card-ს უკვე აქვს ფიქსირებული სიგანე */
+/*
 .menu-grid.center-single-item .menu-card {
-  width: 100%;
-  max-width: 800px; /* ვუწესებთ მაქსიმალურ სიგანეს */
-  height: 400px; /* ვზრდით სიმაღლეს, რომ უფრო ლამაზი იყოს */
+  ...
 }
+*/
 /* ======================== */
+
 
 .menu-card {
   height: 300px;
+  /* === მთავარი შესწორება === */
+  /* ვუწესებთ ფიქსირებულ სიგანეს, რომ არ გაიწელოს */
+  width: 300px; 
+  /* ======================== */
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -107,4 +115,3 @@
 .no-menu-results {
   text-align: center; font-size: 1.5rem; color: #888; padding: 3rem 0;
 }
-

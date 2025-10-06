@@ -38,14 +38,28 @@ const SearchModal = () => {
     }
   };
 
+  // === მთავარი ცვლილება: ეს ფუნქცია ხელს უშლის ფანჯრის დახურვას ===
   const stopPropagation = (e) => e.stopPropagation();
+  // ==========================================================
 
   return (
-    <div className={`search-modal-overlay ${isSearchOpen ? 'open' : ''}`} onClick={closeSearch}>
+    // 1. ვამატებთ onClick-ს ფონზე, რომელიც ხურავს ფანჯარას
+    <div 
+      className={`search-modal-overlay ${isSearchOpen ? 'open' : ''}`} 
+      onClick={closeSearch}
+    >
+      {/* 2. ვამატებთ onClick-ს კონტენტზე, რომელიც აჩერებს დახურვას */}
       <div className="search-modal-content" onClick={stopPropagation}>
         <div className="search-modal-bar">
           <FiSearch className="search-modal-icon" />
-          <input ref={inputRef} type="text" placeholder="Search for coffee, pastries..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} onKeyDown={handleKeyDown} />
+          <input
+            ref={inputRef}
+            type="text"
+            placeholder="Search for coffee, pastries..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onKeyDown={handleKeyDown}
+          />
         </div>
         {searchTerm && (
           <div className="modal-search-results">
@@ -53,10 +67,14 @@ const SearchModal = () => {
               {searchResults.length > 0 ? (
                 searchResults.map(item => (
                   <li key={uuidv4()}>
-                    <Link to={`/menu?search=${item.name}`} onClick={handleResultClick}>{item.name}</Link>
+                    <Link to={`/menu?search=${item.name}`} onClick={handleResultClick}>
+                      {item.name}
+                    </Link>
                   </li>
                 ))
-              ) : ( <li className="no-results-modal">No results found</li> )}
+              ) : (
+                <li className="no-results-modal">No results found</li>
+              )}
             </ul>
           </div>
         )}
@@ -64,4 +82,5 @@ const SearchModal = () => {
     </div>
   );
 };
-export default SearchModal;   //
+
+export default SearchModal;
